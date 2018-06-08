@@ -6,7 +6,7 @@ $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 $dateJour=(Get-Date).toString("yyyy-MM-dd")
 
 #
-$dest="$logPATH\$($dateJour)_P_log1.zip"
+$dest="$logPATH\$($dateJour)_P_log.zip"
 function archive {
 
     $logFiles=Get-ChildItem -Path $logPATH -Filter *.log|where-object {$_.CreationTime -lt (get-date).AddDays(-0)} 
@@ -17,7 +17,7 @@ function archive {
             Remove-Item $_.FullName
         }
     } else {
-        write-host ("Aucun fichier logs n est tourve!")
+        write-host ("Aucun fichier logs n a ete tourve!")
     }
 
 
