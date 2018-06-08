@@ -8,13 +8,18 @@ $dateJour=(Get-Date).toString("yyyy-MM-dd")
 #
 $dest="$logPATH\$($dateJour)_P_log1.zip"
 function archive {
+
     $logFiles=Get-ChildItem -Path $logPATH -Filter *.log|where-object {$_.CreationTime -lt (get-date).AddDays(-0)} 
-    
-    $logFiles|ForEach-Object {
-        Write-Output $_.FullName
-        Compress-Archive $_.FullName -DestinationPath $dest -Update
-        Remove-Item $_.FullName
+    if($logFiles) {
+        $logFiles|ForEach-Object {
+            Write-write ("File logs: {0}" -f $_.FullName)
+            Compress-Archive $_.FullName -DestinationPath $dest -Update
+            Remove-Item $_.FullName
+        }
+    } else {
+        write-host ("Aucun fichier logs n est tourve!")
     }
+
 
 }
 
