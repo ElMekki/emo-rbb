@@ -2,9 +2,14 @@
 $ps="p3"
 $color="Magenta"
 $listPS=@("p1","p2")
-$logPATH="D:\temp"
-
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
+
+# include p0main.ps1
+. $(Join-Path $scriptPath -ChildPath "p0main.ps1")
+$p0=$(Join-Path $scriptPath -ChildPath "p0main.ps1")
+Write-Output('p0: {0}, logpath: {1}' -f $p0, $logPATH)
+
+#
 Write-host("START :  Script {0}, ON {1} ..." -f $ps,$scriptPath) -ForegroundColor $color *>&1|out-file "$logPATH\p.log"
 Write-host("START :  Script {0}, ON {1} ..." -f $ps,$scriptPath) -ForegroundColor $color
 #

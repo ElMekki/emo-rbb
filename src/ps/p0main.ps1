@@ -1,0 +1,1 @@
+$logPATH="D:\temp"
