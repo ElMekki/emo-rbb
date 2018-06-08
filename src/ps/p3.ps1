@@ -1,11 +1,15 @@
 
+# include p0main.ps1
+$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
+. $(Join-Path $scriptPath -ChildPath "p0main.ps1")
+
+#
 $ps="p3"
 $color="Magenta"
 $listPS=@("p1","p2")
-$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 
-# include p0main.ps1
-. $(Join-Path $scriptPath -ChildPath "p0main.ps1")
+
+#
 $p0=$(Join-Path $scriptPath -ChildPath "p0main.ps1")
 Write-Output('p0: {0}, logpath: {1}' -f $p0, $logPATH)
 
