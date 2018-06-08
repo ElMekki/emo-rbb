@@ -17,7 +17,7 @@ function archive {
             Remove-Item $_.FullName
         }
     } else {
-        write-host ("Aucun fichier logs n a ete tourve!")
+        write-host ("Aucun fichier logs n a ete tourve, sous le repertoire {0}" -f $logPATH)
     }
 
 
