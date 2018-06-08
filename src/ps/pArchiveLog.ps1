@@ -26,7 +26,7 @@ function archive {
 #
 Write-host("Path Logs {0} : " -f $logPATH)
 # Clear the screen
-Clear-Host
+#Clear-Host
 
 # Get source path
 #$logFiles = get-childitem -Path $source -Filter *.log | where-object {$_.CreationTime -lt (get-date).AddDays(-0)} 
