@@ -1,6 +1,8 @@
-﻿# sp2 : sp3
+# sp2 : sp3 Master
 D:\labs\github\emo-rbb\src\ps\p0main.ps1
 D:\labs\github\emo-rbb\src\ps\p2.ps1
 D:\labs\github\emo-rbb\src\ps\p3.ps1
-Green
+Kiwi
 Paris
+Milan
+Red
