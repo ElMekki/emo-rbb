@@ -1,5 +1,4 @@
 def codeR=0
-
 pipeline {
     agent any
     
