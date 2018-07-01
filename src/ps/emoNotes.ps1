@@ -1,6 +1,6 @@
 (Get-EventSubscriber).SubscriptionId
 #
-(Get-EventSubscriber).SubscriptionId|%{Unregister-Event -SubscriptionId $_}
+(Get-EventSubscriber).SubscriptionId|ForEach-Object{Unregister-Event -SubscriptionId $_}
 
 ####
 Start-Job -PSPath .\tesWatcher.ps1
